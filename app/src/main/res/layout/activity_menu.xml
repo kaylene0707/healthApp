@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D5A720"
+    tools:context=".Menu">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="#2C3E3C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/drawer" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="156dp"
+        android:layout_height="155dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/userGoals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/StepCounter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wii_fit_trainer_run" />
+
+    <TextView
+        android:id="@+id/StepCounter"
+        android:layout_width="125dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:text="Step Counter: "
+        android:textColor="#2C3E3C"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="178dp"
+        android:layout_height="296dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toStartOf="@+id/weightGoal"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StepCounter"
+        app:srcCompat="@drawable/male_wii_fit_kotd" />
+
+    <TextView
+        android:id="@+id/weightGoal"
+        android:layout_width="85dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="22dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:text="Weight Goal: "
+        android:textColor="#2C3E3C"
+        app:layout_constraintBottom_toTopOf="@+id/HeightGoal"
+        app:layout_constraintEnd_toStartOf="@+id/wGoal"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/userGoals"
+        app:layout_constraintVertical_bias="0.23000002" />
+
+    <TextView
+        android:id="@+id/HeightGoal"
+        android:layout_width="85dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="109dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:text=" Height Goal: "
+        android:textColor="#2C3E3C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84000003" />
+
+    <TextView
+        android:id="@+id/wGoal"
+        android:layout_width="53dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hGoal"
+        android:layout_width="53dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69" />
+
+    <TextView
+        android:id="@+id/userGoals"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="43dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:text="User Goals: "
+        android:textColor="#2C3E3C"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42000002" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

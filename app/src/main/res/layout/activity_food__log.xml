@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D5A720"
+    tools:context=".Food_Log">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="602dp"
+        android:background="#2C3E3C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/drawer" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="349dp"
+        android:layout_height="418dp"
+        android:layout_marginBottom="184dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/food_pyramid" />
+
+    <EditText
+        android:id="@+id/weeklyweight"
+        android:layout_width="277dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:hint="Enter your daily meals: "
+        android:textColorHint="#2C3E3C"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="124dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="31dp"
+        android:backgroundTint="#2C3E3C"
+        android:fontFamily="@font/cinzel_bold"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toStartOf="@+id/btnprog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        tools:text="Submit" />
+
+    <Button
+        android:id="@+id/btnprog"
+        android:layout_width="127dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="#2C3E3C"
+        android:fontFamily="@font/cinzel_bold"
+        android:text="View your Food Log "
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSubmit"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

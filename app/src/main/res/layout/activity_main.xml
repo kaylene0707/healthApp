@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#D5A720"
+    >
+
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="71dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="60dp"
+        android:text="Login"
+        android:backgroundTint="#2C3E3C"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/cinzel_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Password" />
+
+    <Button
+        android:id="@+id/Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="71dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="66dp"
+        android:text="Register"
+        android:backgroundTint="#2C3E3C"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/cinzel_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Login"
+        app:layout_constraintTop_toBottomOf="@+id/Password" />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="353dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="66dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:hint="Password"
+        android:textColorHint="#2C3E3C"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Email" />
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="356dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="43dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:hint="email"
+        android:textColorHint="#2C3E3C"
+        app:layout_constraintBottom_toTopOf="@+id/Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="213dp"
+        android:layout_height="229dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="58dp"
+        app:layout_constraintBottom_toTopOf="@+id/Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/main_page"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

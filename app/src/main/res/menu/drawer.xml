@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group> android:checkableBehavior="single
+        <item
+            android:id="@+id/home"
+            android:checkable="false"
+            android:enabled="true"
+            android:icon="@drawable/home"
+            android:title="Home"
+            android:visible="true" />
+        <item
+            android:id="@+id/wLog"
+            android:checkable="false"
+            android:enabled="true"
+            android:icon="@drawable/baseline_directions_run_black_24dp"
+            android:title="Weight Log"
+            android:visible="true" />
+        <item
+            android:id="@+id/cam"
+            android:checkable="false"
+            android:enabled="true"
+            android:icon="@drawable/camera"
+            android:title="Camera"
+            android:visible="true" />
+        <item
+            android:id="@+id/fLog"
+            android:checkable="false"
+            android:enabled="true"
+            android:icon="@drawable/food"
+            android:title="Food Log"
+            android:visible="true" />
+        <item
+            android:id="@+id/settings"
+            android:checkable="false"
+            android:enabled="true"
+            android:icon="@drawable/settings"
+            android:title="Settings"
+            android:visible="true" />
+    </group>
+</menu>
