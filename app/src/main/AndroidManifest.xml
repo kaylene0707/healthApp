@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.no_18002402.healthapp">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.camera2" />
+    <uses-feature android:name="android.hardware.SensorEventListener"/>
+    <uses-feature android:name="android.hardware.Sensor"/>
+    <uses-feature android:name="android.hardware.SensorManager"/>
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,19 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".Profile"></activity>
-        <activity android:name=".Weight_Log" />
-        <activity android:name=".Settings"
-            android:label="Settings"/>
-        <activity android:name=".Register"
-            android:label="Register"/>
-        <activity android:name=".Menu"
-            android:label="Menu"/>
-        <activity android:name=".Food_Log" />
-        <activity android:name=".Display" />
-        <activity android:name=".Camera" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,10 +24,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".Register"
+            android:label="Register" />
+        <activity
+            android:name=".Menu"
+            android:label="Menu" />
+        <activity
+            android:name=".Settings"
+            android:label="Settings" />
+        <activity android:name=".Camera" />
+        <activity android:name=".Food_Log" />
+        <activity android:name=".Weight_Log" />
+        <activity android:name=".Profile" />
+        <activity android:name=".Display" />
+        <activity android:name=".Diary"></activity>
     </application>
 
 </manifest>

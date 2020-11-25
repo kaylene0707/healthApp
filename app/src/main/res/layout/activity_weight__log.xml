@@ -38,6 +38,24 @@
         app:srcCompat="@drawable/ring_fit_stretch" />
 
     <EditText
+        android:id="@+id/Date"
+        android:layout_width="277dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="333dp"
+        android:hint="Enter the Date:"
+        android:fontFamily="@font/cinzel_bold"
+        android:textColorHint="#2C3E3C"
+        app:layout_constraintBottom_toTopOf="@+id/weeklyweight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
         android:id="@+id/weeklyweight"
         android:layout_width="277dp"
         android:layout_height="49dp"

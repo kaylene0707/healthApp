@@ -19,102 +19,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/drawer" />
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="192dp"
-        android:layout_height="56dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/cinzel_bold"
-        android:hint="Enter your name:"
-        android:textColorHint="#2C3E3C"
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999" />
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="195dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/cinzel_bold"
-        android:hint="Enter your age:"
-        android:textColorHint="#2C3E3C"
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
-
-    <EditText
-        android:id="@+id/height"
-        android:layout_width="198dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/cinzel_bold"
-        android:hint="Enter your height:"
-        android:textColorHint="#2C3E3C"
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002" />
-
-    <EditText
-        android:id="@+id/weight"
-        android:layout_width="196dp"
-        android:layout_height="46dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/cinzel_bold"
-        android:hint="Enter your weight:"
-        android:textColorHint="#2C3E3C"
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
-
-    <EditText
-        android:id="@+id/tarWeight"
-        android:layout_width="287dp"
-        android:layout_height="69dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/cinzel_bold"
-        android:hint="Enter your target weight:"
-        android:textColorHint="#2C3E3C"
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
-
-    <EditText
-        android:id="@+id/tarHeight"
-        android:layout_width="261dp"
-        android:layout_height="49dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/cinzel_bold"
-        android:hint="Enter your target height:"
-        android:textColorHint="#2C3E3C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
-
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/name"
+
         android:backgroundTint="#2C3E3C"
         android:fontFamily="@font/cinzel_bold"
         android:text="Back"
@@ -124,7 +34,7 @@
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        app:layout_constraintVertical_bias="0.89" />
 
     <Button
         android:id="@+id/btnSave"
@@ -141,6 +51,178 @@
         app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        app:layout_constraintVertical_bias="0.89" />
 
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="413dp"
+        android:layout_height="602dp"
+        android:clipToPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cinzel_bold"
+
+                android:hint="Enter your name:"
+                android:textColorHint="#2C3E3C"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cinzel_bold"
+                android:textSize="15sp"
+                android:hint="Enter your age:"
+                android:textColorHint="#2C3E3C" />
+
+            <TextView
+                android:id="@+id/labelG"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="39dp"
+                android:fontFamily="@font/cinzel_bold"
+                android:text="Gender: "
+
+                android:textColor="#2C3E3C"
+                android:textSize="15dp" />
+
+            <RadioGroup
+                android:id="@+id/temp"
+                android:layout_width="339dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radMale"
+                    android:layout_width="114dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:text="Male"
+
+                    android:textColor="#2C3E3C"
+                    android:textSize="15dp" />
+
+                <RadioButton
+                    android:id="@+id/radFemale"
+                    android:layout_width="149dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:text="Female"
+                    android:textColor="#2C3E3C"
+                    android:textSize="15dp" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cinzel_bold"
+                android:hint="Enter your weight:"
+                android:textColorHint="#2C3E3C"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/height"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cinzel_bold"
+                android:textSize="15sp"
+                android:hint="Enter your height:"
+                android:textColorHint="#2C3E3C" />
+
+            <EditText
+                android:id="@+id/tarWeight"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cinzel_bold"
+                android:textSize="15sp"
+                android:hint="Enter your Weight Goal:"
+                android:textColorHint="#2C3E3C" />
+
+            <EditText
+                android:id="@+id/tarSteps"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/cinzel_bold"
+                android:textSize="15sp"
+                android:hint="Enter your Step Goal:"
+                android:textColorHint="#2C3E3C" />
+
+
+            <TextView
+                android:id="@+id/LabelH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Height Conversion"
+                android:fontFamily="@font/cinzel_bold"
+                android:textColor="#2C3E3C"
+                android:textSize="15dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleBtnHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:backgroundTint="#2C3E3C"
+                android:fontFamily="@font/cinzel_bold"
+                android:text="ToggleButton"
+
+                android:textColor="#FFFFFF"
+                android:textOff="Meters"
+                android:textOn="Inches" />
+
+            <TextView
+                android:id="@+id/LabelW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Weight Conversion: "
+                android:fontFamily="@font/cinzel_bold"
+                android:textColor="#2C3E3C"
+                android:textSize="15dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleBtnWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#2C3E3C"
+                android:fontFamily="@font/cinzel_bold"
+                android:text="ToggleButton"
+
+                android:textColor="#FFFFFF"
+                android:textOff="Kilograms"
+                android:textOn="Pounds" />
+
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

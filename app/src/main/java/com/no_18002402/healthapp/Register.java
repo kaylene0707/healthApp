@@ -1,14 +1,15 @@
 package com.no_18002402.healthapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,20 +21,24 @@ public class Register extends AppCompatActivity {
 
 
     private FirebaseAuth auth;
-    EditText email, password;
+    EditText email, password, confirm;
     Button reg, back;
-    String uEmail, uPass;
+    String uEmail, uPass, uCon;
+    ProgressDialog prog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         auth = FirebaseAuth.getInstance();
 
         email = findViewById(R.id.Email);
         password = findViewById(R.id.Password);
+        confirm = findViewById(R.id.ConPass);
         reg = findViewById(R.id.btnSign);
         back = findViewById(R.id.btnBack);
+        prog = new ProgressDialog(Register.this);
 
 
         reg.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +48,7 @@ public class Register extends AppCompatActivity {
 
                 uEmail = email.getText().toString().trim();
                 uPass = password.getText().toString().trim();
+                uCon = confirm.getText().toString().trim();
 
                 if(uEmail.isEmpty())
                 {
@@ -64,31 +70,43 @@ public class Register extends AppCompatActivity {
                     password.requestFocus();
                     return;
                 }
+                if((uPass).equals(uCon))
+                {
+                    auth.createUserWithEmailAndPassword(uEmail, uPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
-                auth.createUserWithEmailAndPassword(uEmail, uPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if(task.isSuccessful())
-                        {
-                            Toast.makeText(getApplicationContext(), "Successfully registered", Toast.LENGTH_LONG).show();
-
-                            Intent h = new Intent(Register.this, Menu.class);
-                            startActivity(h);
-                        }
-                        else {
-                            if(task.getException() instanceof FirebaseApiNotAvailableException)
+                            if(task.isSuccessful())
                             {
-                                Toast.makeText(getApplicationContext(), "User is already registered", Toast.LENGTH_LONG).show();
+                                prog.setTitle("Loading");
+                                prog.setMessage("Signing in...");
+                                prog.show();
+
+
+                                Intent h = new Intent(Register.this, Profile.class);
+                                startActivity(h);
                             }
-                            else{
-                                Toast.makeText(getApplicationContext(), "Unable to register this account", Toast.LENGTH_LONG).show();
+                            else {
+                                if(task.getException() instanceof FirebaseApiNotAvailableException)
+                                {
+                                    Toast.makeText(getApplicationContext(), "User is already registered", Toast.LENGTH_LONG).show();
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Unable to register this account", Toast.LENGTH_LONG).show();
+                                }
                             }
                         }
-                    }
-                });
+                    });
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "The Passwords that you have entered do not match", Toast.LENGTH_LONG).show();
+                    password.requestFocus();
+                    return;
+                }
             }
         });
+
 
         back.setOnClickListener(new View.OnClickListener(){
             @Override

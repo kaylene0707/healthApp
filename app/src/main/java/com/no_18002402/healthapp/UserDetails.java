@@ -2,8 +2,15 @@ package com.no_18002402.healthapp;
 
 public class UserDetails {
 
-    private String FullName, Age, Weight, Height, TargetWeight, TargetHeight;
+    private String FullName, Age, Gender, Weight, Height, TargetWeight,TargetSteps;
 
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
 
     public String getFullName() {
         return FullName;
@@ -45,16 +52,16 @@ public class UserDetails {
         TargetWeight = targetWeight;
     }
 
-    public String getTargetHeight() {
-        return TargetHeight;
+    public String getTargetSteps() {
+        return TargetSteps;
     }
 
-    public void setTargetHeight(String targetHeight) {
-        TargetHeight = targetHeight;
+    public void setTargetSteps(String targetSteps) {
+        TargetSteps = targetSteps;
     }
 
     public String toString()
     {
-        return FullName + "" + Age + ""  + Weight + "" +  Height + "" + TargetWeight + "" + TargetHeight;
+        return FullName + "" + Age + "" + Gender + "" + Weight + "" +  Height + "" + TargetWeight + "" + TargetSteps;
     }
 }

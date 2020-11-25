@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D5A720"
-    tools:context=".Display">
+    tools:context=".Diary">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
@@ -23,35 +23,36 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/drawer" />
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="528dp"
-        android:layout_marginBottom="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnReturn"
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="447dp"
+        android:backgroundTint="#2C3E3C"
+        android:fontFamily="@font/cinzel_bold"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ListView
+        android:id="@+id/List_dynamic"
+        android:layout_width="368dp"
+        android:layout_height="496dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnClose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <Button
-        android:id="@+id/btnReturn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="9dp"
-        android:backgroundTint="#2C3E3C"
-        android:fontFamily="@font/cinzel_bold"
-        android:text="RETURN"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.90999997" />
-
-
-    //app:layout_constraintTop_toBottomOf="@+id/_dynamic"
 </androidx.constraintlayout.widget.ConstraintLayout>

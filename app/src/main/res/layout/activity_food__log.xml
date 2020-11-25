@@ -37,20 +37,39 @@
         app:srcCompat="@drawable/food_pyramid" />
 
     <EditText
-        android:id="@+id/weeklyweight"
+        android:id="@+id/Date"
+        android:layout_width="277dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:hint="Enter the Date:"
+        android:textColorHint="#2C3E3C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <EditText
+        android:id="@+id/weeklymeals"
         android:layout_width="277dp"
         android:layout_height="50dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="46dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/cinzel_bold"
         android:hint="Enter your daily meals: "
         android:textColorHint="#2C3E3C"
-        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/btnprog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintTop_toBottomOf="@+id/Date" />
+
 
     <Button
         android:id="@+id/btnSubmit"
@@ -68,6 +87,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btnprog"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.52"
         tools:text="Submit" />
 
     <Button
@@ -85,6 +105,7 @@
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnSubmit"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.45999998" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

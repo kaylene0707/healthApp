@@ -1,14 +1,15 @@
 package com.no_18002402.healthapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     EditText password, email;
     Button login, register;
     String pEmail, pPassword;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.Password);
         login = findViewById(R.id.Login);
         register = findViewById(R.id.Register);
+        progress = new ProgressDialog(MainActivity.this);
 
 
         register.setOnClickListener(new View.OnClickListener()
@@ -41,9 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                //Intent i = new Intent(this, Register.class);
-                //Intent i = new Intent(new MainActivity.this,Register.class);
-                Intent i = new Intent(MainActivity.this,Register.class);
+                 Intent i = new Intent(MainActivity.this,Register.class);
 
                 startActivity(i);
             }
@@ -57,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
                 pEmail = email.getText().toString();
                 pPassword = password.getText().toString();
+
+                progress.setTitle("Loading");
+                progress.setMessage("Logging in...");
+                progress.show();
 
                 if(pEmail.isEmpty())
                 {

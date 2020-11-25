@@ -1,14 +1,15 @@
 package com.no_18002402.healthapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -21,8 +22,10 @@ public class Settings extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference dataref = database.getReference("Details");
-    TextView Name, Age, Weight, Height, tWeight, tHeight;
-    Button edit;
+
+    TextView Name, Age, Weight, Height, tWeight, tSteps, gen;
+    String namePull, agePull, genderPull, heightPull, weightPull, targetWeightPull, targetStepsPull;
+    Button edit, logout;
     BottomNavigationView nav;
     UserDetails details = new UserDetails();
 
@@ -30,36 +33,45 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
         panels();
 
         edit = findViewById(R.id.btnEdit);
+        logout = findViewById(R.id.btnOut);
         Name = findViewById(R.id.name);
         Age = findViewById(R.id.age);
+        gen = findViewById(R.id.gender);
         Weight = findViewById(R.id.weight);
         Height = findViewById(R.id.height);
         tWeight = findViewById(R.id.tarWeight);
-        tHeight = findViewById(R.id.tarHeight);
+        tSteps = findViewById(R.id.tarSteps);
 
 
         dataref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
 
-                for(DataSnapshot child : children)
-                {
-                    UserDetails details = child.getValue(UserDetails.class);
-                    Name.setText(child.getValue().toString());
-                    Age.setText(child.getValue().toString());
-                    Weight.setText(child.getValue().toString());
-                    Height.setText(child.getValue().toString());
-                    tWeight.setText(child.getValue().toString());
-                    tHeight.setText(child.getValue().toString());
-                }
+                namePull = dataSnapshot.child("fullName").getValue(String.class);
+                agePull = dataSnapshot.child("age").getValue(String.class);
+                genderPull = dataSnapshot.child("gender").getValue(String.class);
+                heightPull = dataSnapshot.child("height").getValue(String.class);
+                weightPull = dataSnapshot.child("weight").getValue(String.class);
+                targetWeightPull = dataSnapshot.child("targetWeight").getValue(String.class);
+                targetStepsPull = dataSnapshot.child("targetSteps").getValue(String.class);
+
+
+                Name.setText(namePull);
+                Age.setText(agePull);
+                gen.setText(genderPull);
+                Height.setText(heightPull);
+                Weight.setText(weightPull);
+                tWeight.setText(targetWeightPull);
+                tSteps.setText(targetStepsPull);
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(Settings.this, "An error has occurred", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -69,16 +81,24 @@ public class Settings extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent inte = new Intent(Settings.this, Profile.class);
-                startActivity(inte);
+                Intent Editt = new Intent(Settings.this, Profile.class);
+                startActivity(Editt);
             }
         });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent out = new Intent(Settings.this, MainActivity.class);
+                startActivity(out);
+            }
+        });
     }
 
     public void panels()
     {
         nav = findViewById(R.id.navigation);
+        nav.setSelectedItemId(R.id.settings);
         nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
